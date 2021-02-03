@@ -4,7 +4,7 @@
 #include <string>   // Using strings.
 using namespace std;
 
-int main() // Entry point for every C++ program.
+int main() // Entry point for every C++ program.z
 {
 	// Declare variables.
 	bool currentPlayer, quitGame = false, bettingPhase = false, rematch = false;
@@ -178,7 +178,18 @@ int main() // Entry point for every C++ program.
 				quitGame = true;
 			}
 		}
-	    
+		if (player1Pool <= 0)
+		{
+			cout << player1 << " , it's been a pleasure doing buisness with you. Better luck next time!" << endl;
+			cout << player2 << " , WINNER WINNER CHICKEN DINNER! " << endl;
+			bettingPhase = true;
+		}
+		if (player2Pool <= 0)
+		{
+			cout << player2 << " , it's been a pleasure doing buisness with you. Better luck next time!" << endl;
+			cout << player1 << " , WINNER WINNER CHICKEN DINNER! " << endl;
+			bettingPhase = true;
+		}
 		cout << "The pot is : $" << pot << endl << "=================" << endl;
 		// Create random number from 1 to 100 inclusive.
 		srand((unsigned)time(NULL)); // Seeds the random number sequence.
